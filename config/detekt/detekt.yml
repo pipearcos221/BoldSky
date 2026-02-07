@@ -9,12 +9,13 @@ build:
 
 complexity:
   active: true
-  ComplexityCondition:
+  CyclomaticComplexMethod:
     active: true
     threshold: 4
   LongParameterList:
     active: true
-    threshold: 6
+    functionThreshold: 6
+    constructorThreshold: 6
   LargeClass:
     active: true
     threshold: 150
