@@ -23,9 +23,7 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
         with:
-          cache-dependency-path: |
-            **/build.gradle.kts
-            gradle/libs.versions.toml
+          gradle-home-cache-cleanup: true
 
       - name: Create Secrets Properties File
         run: |
