@@ -7,7 +7,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
-import co.com.pipearcos221.boldsky.ui.theme.BoldSkyTheme
+import co.com.pipearcos221.boldsky.core.ui.theme.BoldSkyTheme
+import co.com.pipearcos221.boldsky.feature.search.SearchScreen
 
 /**
  * The main activity of the application.
@@ -19,6 +20,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             BoldSkyTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    SearchScreen()
                 }
             }
         }

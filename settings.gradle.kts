@@ -21,3 +21,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "BoldSky"
 include(":app")
+include(":core:ui")
+include(":feature:search")
+include(":feature:detail")
