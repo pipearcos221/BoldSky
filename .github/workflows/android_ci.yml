@@ -25,6 +25,9 @@ jobs:
         with:
           cache-read-only: false
 
+      - name: Create local.properties
+        run: echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
+
       - name: Create Secrets Properties File
         run: |
           if [ -n "${{ secrets.API_KEY }}" ]; then
