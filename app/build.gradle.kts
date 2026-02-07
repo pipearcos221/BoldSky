@@ -9,6 +9,11 @@ plugins {
     alias(libs.plugins.detekt)
 }
 
+secrets {
+    propertiesFileName = "secrets.properties"
+    defaultPropertiesFileName = "local.properties"
+}
+
 android {
     namespace = "co.com.pipearcos221.boldsky"
     compileSdk = 36
