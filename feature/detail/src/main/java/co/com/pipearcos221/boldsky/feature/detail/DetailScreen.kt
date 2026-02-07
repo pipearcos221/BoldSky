@@ -8,8 +8,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
 @Composable
-fun DetailScreen() {
+fun DetailScreen(itemId: String?) {
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-        Text(text = "Hello Detail!")
+        Text(text = "Hello Detail! Item ID: $itemId")
     }
 }
