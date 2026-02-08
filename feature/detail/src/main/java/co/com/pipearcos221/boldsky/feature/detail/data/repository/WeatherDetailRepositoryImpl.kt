@@ -11,6 +11,6 @@ class WeatherDetailRepositoryImpl @Inject constructor(
     private val weatherDetailApiService: WeatherDetailApiService
 ) : WeatherDetailRepository {
 
-    override suspend fun getWeatherDetail(query: String, days: Int): Result<WeatherDetail> =
-        safeApiCall { weatherDetailApiService.getWeatherDetail(query, days).toWeatherDetail() }
+    override suspend fun getWeatherDetail(query: String): Result<WeatherDetail> =
+        safeApiCall { weatherDetailApiService.getWeatherDetail(query).toWeatherDetail() }
 }
