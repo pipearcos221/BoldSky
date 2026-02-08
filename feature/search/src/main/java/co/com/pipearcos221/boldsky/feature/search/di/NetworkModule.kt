@@ -14,7 +14,7 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideCityApiService(retrofitBuilder: Retrofit): CityApiService {
-        return retrofitBuilder.create(CityApiService::class.java)
+    fun provideCityApiService(retrofit: Retrofit): CityApiService {
+        return retrofit.create(CityApiService::class.java)
     }
 }
