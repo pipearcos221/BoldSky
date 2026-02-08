@@ -80,15 +80,6 @@ dependencies {
     ksp(libs.hilt.compiler)
     implementation(libs.hilt.navigation.compose)
 
-    // Networking
-    implementation(libs.retrofit)
-    implementation(libs.retrofit.kotlinx.serialization)
-    implementation(libs.okhttp)
-    implementation(libs.okhttp.logging)
-
-    // Kotlinx Serialization
-    implementation(libs.kotlinx.serialization.json)
-
     // Database (Room)
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)
