@@ -14,6 +14,8 @@ android {
     defaultConfig {
         minSdk = 21
         consumerProguardFiles("consumer-rules.pro")
+        buildConfigField("String", "BASE_URL", "\"https://api.weatherapi.com/v1/\"")
+        buildConfigField("String", "API_KEY", (findProperty("API_KEY") as? String? ?: "").let { "\"$it\"" })
     }
 
     buildTypes {
