@@ -1,4 +1,4 @@
-package co.com.pipearcos221.boldsky.feature.detail.data.di
+package co.com.pipearcos221.boldsky.feature.detail.di
 
 import co.com.pipearcos221.boldsky.feature.detail.data.remote.WeatherDetailApiService
 import dagger.Module

@@ -1,4 +1,4 @@
-package co.com.pipearcos221.boldsky.feature.detail.data.di
+package co.com.pipearcos221.boldsky.feature.detail.di
 
 import co.com.pipearcos221.boldsky.feature.detail.data.repository.WeatherDetailRepositoryImpl
 import co.com.pipearcos221.boldsky.feature.detail.domain.repository.WeatherDetailRepository
