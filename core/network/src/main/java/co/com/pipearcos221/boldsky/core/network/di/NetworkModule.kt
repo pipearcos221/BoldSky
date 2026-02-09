@@ -3,8 +3,11 @@ package co.com.pipearcos221.boldsky.core.network.di
 import android.content.Context
 import android.os.Build
 import co.com.pipearcos221.boldsky.core.network.BuildConfig
+import co.com.pipearcos221.boldsky.core.network.monitor.NetworkMonitor
+import co.com.pipearcos221.boldsky.core.network.monitor.NetworkMonitorImpl
 import co.com.pipearcos221.boldsky.core.network.ssl.SslUtils
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -83,4 +86,15 @@ object NetworkModule {
             .addConverterFactory(json.asConverterFactory(contenType))
             .build()
     }
+}
+
+@Module
+@InstallIn(SingletonComponent::class)
+abstract class MonitorModule {
+
+    @Binds
+    @Singleton
+    internal abstract fun bindsNetworkMonitor(
+        impl: NetworkMonitorImpl
+    ): NetworkMonitor
 }

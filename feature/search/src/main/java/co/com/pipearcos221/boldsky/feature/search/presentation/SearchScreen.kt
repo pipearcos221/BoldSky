@@ -45,6 +45,7 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.hilt.navigation.compose.hiltViewModel
+import co.com.pipearcos221.boldsky.core.ui.common.ErrorComponent
 import co.com.pipearcos221.boldsky.core.ui.theme.AppAlphas
 import co.com.pipearcos221.boldsky.core.ui.theme.AppDimens
 import co.com.pipearcos221.boldsky.core.ui.theme.PrimaryDark
@@ -92,6 +93,7 @@ fun SearchScreen(
             uiState = uiState,
             onItemClick = onItemClick,
             onQueryChanged = viewModel::onQueryChanged,
+            onRetry = viewModel::onRetry,
             modifier = Modifier.padding(innerPadding)
         )
     }
@@ -103,6 +105,7 @@ private fun SearchScreenContent(
     uiState: SearchState,
     onItemClick: (String) -> Unit,
     onQueryChanged: (String) -> Unit,
+    onRetry: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     val configuration = LocalConfiguration.current
@@ -137,10 +140,9 @@ private fun SearchScreenContent(
             ) {
                 when {
                     uiState.isLoading -> CircularProgressIndicator()
-                    uiState.error != null -> Text(
-                        text = uiState.error,
-                        color = MaterialTheme.colorScheme.error,
-                        textAlign = TextAlign.Center
+                    uiState.error != null -> ErrorComponent(
+                        error = uiState.error,
+                        onRetry = onRetry
                     )
                     uiState.query.isBlank() -> Text(
                         text = stringResource(id = R.string.search_initial_message),
@@ -231,7 +233,7 @@ private fun CityCard(
         ) {
             Icon(
                 imageVector = Icons.Default.LocationOn,
-                contentDescription = null, // Decorative
+                contentDescription = null,
                 modifier = Modifier.size(AppDimens.IconSizeLarge)
             )
             Spacer(modifier = Modifier.width(AppDimens.SpacingLarge))
@@ -245,7 +247,7 @@ private fun CityCard(
             }
             Icon(
                 imageVector = Icons.AutoMirrored.Filled.ArrowForwardIos,
-                contentDescription = null, // Decorative
+                contentDescription = null,
                 modifier = Modifier.size(AppDimens.IconSizeMedium),
                 tint = MaterialTheme.colorScheme.outline
             )

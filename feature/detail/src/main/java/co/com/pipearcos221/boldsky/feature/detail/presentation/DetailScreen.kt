@@ -21,7 +21,6 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.rememberTopAppBarState
@@ -36,6 +35,7 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
+import co.com.pipearcos221.boldsky.core.ui.common.ErrorComponent
 import co.com.pipearcos221.boldsky.core.ui.theme.AppAlphas
 import co.com.pipearcos221.boldsky.core.ui.theme.AppDimens
 import co.com.pipearcos221.boldsky.core.ui.theme.PrimaryDark
@@ -91,23 +91,22 @@ fun DetailScreen(
         containerColor = Color.Transparent
     ) { paddingValues ->
         Box(
-            modifier = Modifier.fillMaxSize()
+            modifier = Modifier.fillMaxSize().padding(paddingValues)
         ) {
             when {
                 uiState.isLoading -> {
                     CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
                 }
                 uiState.error != null -> {
-                    Text(
-                        text = uiState.error!!,
-                        color = MaterialTheme.colorScheme.error,
+                    ErrorComponent(
+                        error = uiState.error!!,
+                        onRetry = viewModel::onRetry,
                         modifier = Modifier.align(Alignment.Center)
                     )
                 }
                 uiState.weatherDetail != null -> {
                     WeatherDetailContent(
-                        weatherDetail = uiState.weatherDetail!!,
-                        paddingValues = paddingValues
+                        weatherDetail = uiState.weatherDetail!!
                     )
                 }
             }
@@ -117,31 +116,28 @@ fun DetailScreen(
 
 @Composable
 private fun WeatherDetailContent(
-    weatherDetail: WeatherDetail,
-    paddingValues: PaddingValues
+    weatherDetail: WeatherDetail
 ) {
     val configuration = LocalConfiguration.current
     val isLandscape = configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
 
     if (isLandscape) {
-        LandscapeWeatherDetailContent(weatherDetail, paddingValues)
+        LandscapeWeatherDetailContent(weatherDetail)
     } else {
-        PortraitWeatherDetailContent(weatherDetail, paddingValues)
+        PortraitWeatherDetailContent(weatherDetail)
     }
 }
 
 @Composable
 private fun PortraitWeatherDetailContent(
-    weatherDetail: WeatherDetail,
-    paddingValues: PaddingValues
+    weatherDetail: WeatherDetail
 ) {
     LazyColumn(
         modifier = Modifier.fillMaxSize(),
         contentPadding = PaddingValues(
             start = AppDimens.SpacingLarge,
             end = AppDimens.SpacingLarge,
-            top = paddingValues.calculateTopPadding(),
-            bottom = paddingValues.calculateBottomPadding() + AppDimens.SpacingLarge
+            bottom = AppDimens.SpacingLarge
         ),
         verticalArrangement = Arrangement.spacedBy(AppDimens.SpacingLarge)
     ) {
@@ -157,7 +153,7 @@ private fun PortraitWeatherDetailContent(
 @Composable
 private fun LandscapeWeatherDetailContent(
     weatherDetail: WeatherDetail,
-    paddingValues: PaddingValues
+    paddingValues: PaddingValues = PaddingValues()
 ) {
     Row(
         modifier = Modifier

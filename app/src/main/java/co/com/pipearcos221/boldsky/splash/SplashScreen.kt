@@ -39,7 +39,6 @@ fun SplashScreen(onTimeout: () -> Unit) {
         iterations = ANIMATION_ITERATIONS
     )
 
-    // Navigate when the animation is complete
     LaunchedEffect(progress) {
         if (progress == ANIMATION_END_PROGRESS) {
             onTimeout()
