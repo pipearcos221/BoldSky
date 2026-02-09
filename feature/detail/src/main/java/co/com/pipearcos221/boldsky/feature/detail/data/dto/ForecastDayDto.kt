@@ -6,5 +6,6 @@ import kotlinx.serialization.Serializable
 data class ForecastDayDto(
     val date: String,
     val day: DayDto,
+    val astro: AstroDto,
     val hour: List<HourDto>? = null
 )

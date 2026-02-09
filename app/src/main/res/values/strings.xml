@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">BoldSky</string>
+    <string name="app_tagline">Your sky, your weather.</string>
+    <string name="app_version_format">Version %s</string>
 </resources>

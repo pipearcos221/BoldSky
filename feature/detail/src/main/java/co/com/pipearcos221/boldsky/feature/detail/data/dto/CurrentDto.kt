@@ -14,5 +14,7 @@ data class CurrentDto(
     @SerialName("wind_kph")
     val windKph: Double,
     @SerialName("vis_km")
-    val visibilityKm: Double
+    val visibilityKm: Double,
+    @SerialName("dewpoint_c")
+    val dewPointC: Double
 )

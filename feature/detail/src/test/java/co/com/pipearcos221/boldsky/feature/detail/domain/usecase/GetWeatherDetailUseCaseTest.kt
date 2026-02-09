@@ -38,6 +38,9 @@ class GetWeatherDetailUseCaseTest {
             windSpeedKph = 10.0,
             humidity = 70,
             visibilityKm = 10.0,
+            dewPointC = 12.0,
+            sunrise = "06:00 AM",
+            sunset = "06:00 PM",
             dailyForecasts = emptyList(),
             hourlyForecasts = emptyList()
         )

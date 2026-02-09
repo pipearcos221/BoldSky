@@ -1,0 +1,20 @@
+<resources>
+    <string name="current_weather">Current Weather</string>
+    <string name="feels_like">Feels like</string>
+    <string name="wind">Wind</string>
+    <string name="humidity">Humidity</string>
+    <string name="visibility">Visibility</string>
+    <string name="todays_forecast">Today\'s Forecast</string>
+    <string name="three_day_forecast">3-Day Forecast</string>
+    <string name="sunrise">Sunrise</string>
+    <string name="sunset">Sunset</string>
+    <string name="temperature_range">Temperature range</string>
+    <string name="navigate_back">Navigate back</string>
+
+    <!-- Formats -->
+    <string name="temp_format">%s°C</string>
+    <string name="daily_temp_format">%1$s° / %2$s°</string>
+    <string name="wind_speed_kph">%s kph</string>
+    <string name="humidity_percentage">%s%%</string>
+    <string name="visibility_km">%s km</string>
+</resources>

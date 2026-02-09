@@ -1,10 +1,17 @@
+import java.util.Properties
+
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
-    alias(libs.plugins.secrets)
+}
+
+val secretsFile = rootProject.file("secrets.properties")
+val secrets = Properties()
+if (secretsFile.exists()) {
+    secrets.load(secretsFile.inputStream())
 }
 
 android {
@@ -15,7 +22,7 @@ android {
         minSdk = 21
         consumerProguardFiles("consumer-rules.pro")
         buildConfigField("String", "BASE_URL", "\"https://api.weatherapi.com/v1/\"")
-        buildConfigField("String", "API_KEY", (findProperty("API_KEY") as? String? ?: "").let { "\"$it\"" })
+        buildConfigField("String", "API_KEY", "\"${secrets.getProperty("API_KEY", "")}\"")
     }
 
     buildTypes {

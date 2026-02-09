@@ -11,6 +11,9 @@ data class WeatherDetail(
     val windSpeedKph: Double,
     val humidity: Int,
     val visibilityKm: Double,
+    val dewPointC: Double,
+    val sunrise: String,
+    val sunset: String,
     val dailyForecasts: List<DailyForecast>,
     val hourlyForecasts: List<HourlyForecast>
 )

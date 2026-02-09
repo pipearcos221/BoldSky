@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Error Messages -->
+    <string name="error_network">No internet connection. Please check your network and try again.</string>
+    <string name="error_server">We\'re having trouble connecting to our servers. Please try again later.</string>
+    <string name="error_unknown">An unexpected error occurred. Please try again.</string>
+
+    <!-- Actions -->
+    <string name="action_retry">Retry</string>
+</resources>

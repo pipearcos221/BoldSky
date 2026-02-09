@@ -33,9 +33,9 @@ fun AppNavHost(
         }
 
         searchScreen(
-            onItemClick = { itemId -> navController.navigate("$DETAIL_ROUTE/$itemId") }
+            onItemClick = { cityName -> navController.navigate("$DETAIL_ROUTE/$cityName") }
         )
 
-        detailScreen()
+        detailScreen(onNavigateUp = { navController.navigateUp() })
     }
 }

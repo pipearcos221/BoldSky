@@ -1,19 +1,21 @@
-@file:Suppress("MagicNumber")
-
 package co.com.pipearcos221.boldsky.core.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-/** The primary color for the dark theme. */
-val Purple80 = Color(0xFFD0BCFF)
-/** The secondary color for the dark theme. */
-val PurpleGrey80 = Color(0xFFCCC2DC)
-/** The tertiary color for the dark theme. */
-val Pink80 = Color(0xFFEFB8C8)
+// Dark Theme Colors
+val PrimaryDark = Color(0xFF82B1FF)
+val OnPrimaryDark = Color(0xFF002B52)
+val PrimaryContainerDark = Color(0xFF00407B)
+val OnPrimaryContainerDark = Color(0xFFC3E7FF)
 
-/** The primary color for the light theme. */
-val Purple40 = Color(0xFF6650a4)
-/** The secondary color for the light theme. */
-val PurpleGrey40 = Color(0xFF625b71)
-/** The tertiary color for the light theme. */
-val Pink40 = Color(0xFF7D5260)
+val SecondaryDark = Color(0xFFFFB74D)
+val OnSecondaryDark = Color(0xFF4A2B00)
+val SecondaryContainerDark = Color(0xFF693F00)
+val OnSecondaryContainerDark = Color(0xFFFFDDB8)
+
+val BackgroundDark = Color(0xFF0A192E)
+val OnBackgroundDark = Color(0xFFE2E2E6)
+val SurfaceDark = Color(0xFF0A192E)
+val OnSurfaceDark = Color(0xFFE2E2E6)
+val SurfaceVariantDark = Color(0xFF44474E)
+val OnSurfaceVariantDark = Color(0xFFC4C6D0)
