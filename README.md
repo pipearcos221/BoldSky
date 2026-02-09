@@ -75,7 +75,10 @@ A continuación se muestran algunas de las pantallas y animaciones clave de la a
 
 La aplicación recibe al usuario con una animación fluida construida con Lottie, creando una primera impresión moderna y atractiva.
 
-  <img src="https://github.com/user-attachments/assets/b7ab245c-685a-446e-827e-f29f47e61c0a" width="250" heigth="250">
+
+https://github.com/user-attachments/assets/a60bb970-6afa-44f9-8c2f-b3d72401969b
+
+
 
 
 ---
@@ -84,16 +87,41 @@ La aplicación recibe al usuario con una animación fluida construida con Lottie
 
 A continuación se muestra el flujo de búsqueda, la pantalla de detalle y la gestión de errores de red.
 
-| Pantalla de Búsqueda | Pantalla de Detalle (Vertical) | Error de Conexión |
-| :---: | :---: | :---: |
-| <img src="URL_DE_TU_IMAGEN_DE_BUSQUEDA" width="250"> | <img src="URL_DE_TU_IMAGEN_DE_DETALLE" width="250"> | <img src="URL_DE_TU_IMAGEN_DE_ERROR" width="250"> |
+| Pantalla de Búsqueda | Pantalla de Detalle (Vertical) |
+| :---: | :---: |
+| <img width="280" height="580" alt="image" src="https://github.com/user-attachments/assets/985918ad-1f04-4eb6-91c7-9fb9fd7813e6" /> | <video width="280" height="580" alt="video" src="https://github.com/user-attachments/assets/9377d1e7-0d97-430b-be4f-79cecfcf55be" /> 
 
----
+| Error de Conexión | Error de Servidor | Error Desconocido | 
+| :---: | :---: | :---: |
+| <img width="280" height="580" alt="image" src="https://github.com/user-attachments/assets/b72f06e6-dfbf-4a5f-b930-af4221eed3e7" /> | <img width="280" height="580" alt="image" src="https://github.com/user-attachments/assets/3f01eea7-f44a-41de-a014-4e287656ce76" /> | <img width="280" height="580" alt="image" src="https://github.com/user-attachments/assets/154760c4-bb0d-4a52-9d09-8ea7282728c9" /> |
+
 
 ### Diseño Responsivo
 
 La pantalla de detalle se adapta a la orientación horizontal para aprovechar mejor el espacio.
 
-<p align="center">
-  <img src="URL_DE_TU_IMAGEN_DE_DETALLE_HORIZONTAL" width="515">
-</p>
+| Pantalla de Búsqueda LandScape |
+| :---: |
+| <video width="850" height="700" alt="video" src="https://github.com/user-attachments/assets/b75f7bf4-1513-4caa-86f6-89fcff67ad37" /> |
+
+
+| Pantalla de Detalle LandScape |
+| :---: |
+| <video width="850" height="700" alt="video" src="https://github.com/user-attachments/assets/df3db796-26ba-4b4d-928a-26b19f6fb718" /> | 
+
+## 🤖 Integración Continua (CI)
+
+Este proyecto utiliza un pipeline de Integración Continua (CI) con **GitHub Actions** para automatizar la verificación de la calidad del código en cada cambio. Esto garantiza que la base de código se mantenga estable, funcional y limpia, previniendo la introducción de nuevos errores.
+
+### Flujo de Trabajo del Pipeline
+
+El pipeline se ejecuta automáticamente en cada `push` y `pull_request` a las ramas principales (como `main`, `chore` y `feature`), y realiza los siguientes trabajos:
+
+1.  **Compilación (`Build`)**: El primer paso es compilar el código completo de la aplicación (`./gradlew assembleDebug`). Esto asegura que no hay errores de sintaxis o de dependencias que rompan el proyecto.
+
+2.  **Análisis Estático (`Linting`)**: Se ejecuta un análisis estático del código con **Detekt** (`./gradlew detekt`). Este trabajo busca "code smells", posibles bugs, y desviaciones de las guías de estilo de Kotlin, manteniendo el código limpio y legible.
+
+3.  **Pruebas Unitarias (`Unit Tests`)**: Se ejecutan todos los tests unitarios del proyecto (`./gradlew testDebugUnitTest`). Esto verifica que la lógica de negocio en los `ViewModel`s y otras clases funciona como se espera, de forma rápida y aislada.
+
+
+
