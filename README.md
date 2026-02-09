@@ -67,3 +67,33 @@ BoldSky/
     └── presentation/         # Screen, ViewModel, y Estado de la UI
 ```
 
+## 📱 Pantallas
+
+A continuación se muestran algunas de las pantallas y animaciones clave de la aplicación, demostrando su diseño limpio y su funcionalidad en diferentes escenarios.
+
+### Pantalla de Bienvenida Animada
+
+La aplicación recibe al usuario con una animación fluida construida con Lottie, creando una primera impresión moderna y atractiva.
+
+  <img src="https://github.com/user-attachments/assets/b7ab245c-685a-446e-827e-f29f47e61c0a" width="250" heigth="250">
+
+
+---
+
+### Flujo Principal y Estados
+
+A continuación se muestra el flujo de búsqueda, la pantalla de detalle y la gestión de errores de red.
+
+| Pantalla de Búsqueda | Pantalla de Detalle (Vertical) | Error de Conexión |
+| :---: | :---: | :---: |
+| <img src="URL_DE_TU_IMAGEN_DE_BUSQUEDA" width="250"> | <img src="URL_DE_TU_IMAGEN_DE_DETALLE" width="250"> | <img src="URL_DE_TU_IMAGEN_DE_ERROR" width="250"> |
+
+---
+
+### Diseño Responsivo
+
+La pantalla de detalle se adapta a la orientación horizontal para aprovechar mejor el espacio.
+
+<p align="center">
+  <img src="URL_DE_TU_IMAGEN_DE_DETALLE_HORIZONTAL" width="515">
+</p>
