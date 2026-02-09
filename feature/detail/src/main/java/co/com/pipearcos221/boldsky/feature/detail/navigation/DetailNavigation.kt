@@ -4,17 +4,16 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import co.com.pipearcos221.boldsky.feature.detail.DetailScreen
+import co.com.pipearcos221.boldsky.feature.detail.presentation.DetailScreen
 
-const val DETAIL_ROUTE = "detail_route"
-const val ARG_ITEM_ID = "itemId"
+const val DETAIL_ROUTE = "detail"
+const val ARG_CITY_NAME = "city"
 
 fun NavGraphBuilder.detailScreen() {
     composable(
-        route = "$DETAIL_ROUTE/{$ARG_ITEM_ID}",
-        arguments = listOf(navArgument(ARG_ITEM_ID) { type = NavType.StringType })
-    ) { backStackEntry ->
-        val itemId = backStackEntry.arguments?.getString(ARG_ITEM_ID)
-        DetailScreen(itemId = itemId)
+        route = "$DETAIL_ROUTE/{$ARG_CITY_NAME}",
+        arguments = listOf(navArgument(ARG_CITY_NAME) { type = NavType.StringType })
+    ) {
+        DetailScreen()
     }
 }
