@@ -36,6 +36,6 @@ fun AppNavHost(
             onItemClick = { cityName -> navController.navigate("$DETAIL_ROUTE/$cityName") }
         )
 
-        detailScreen()
+        detailScreen(onNavigateUp = { navController.navigateUp() })
     }
 }
