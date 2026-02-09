@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowForward
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -43,7 +44,12 @@ fun DailyForecasts(
         Spacer(modifier = Modifier.height(AppDimens.SpacingMedium))
         Column(verticalArrangement = Arrangement.spacedBy(AppDimens.SpacingMedium)) {
             dailyForecasts.forEach { forecast ->
-                Card(modifier = Modifier.fillMaxWidth()) {
+                Card(
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = CardDefaults.cardColors(
+                        containerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.5f)
+                    )
+                ) {
                     Row(
                         modifier = Modifier.padding(AppDimens.SpacingLarge),
                         verticalAlignment = Alignment.CenterVertically,

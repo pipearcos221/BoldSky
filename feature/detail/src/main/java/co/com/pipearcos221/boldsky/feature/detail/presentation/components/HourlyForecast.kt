@@ -36,6 +36,9 @@ fun HourlyForecast(
             items(hourlyForecasts) { forecast ->
                 Card(
                     modifier = Modifier.padding(vertical = AppDimens.SpacingSmall),
+                    colors = CardDefaults.cardColors(
+                        containerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.5f)
+                    ),
                     elevation = CardDefaults.cardElevation(defaultElevation = AppDimens.SpacingSmall)
                 ) {
                     Column(

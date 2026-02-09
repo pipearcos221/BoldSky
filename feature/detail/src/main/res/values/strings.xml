@@ -9,6 +9,7 @@
     <string name="sunrise">Sunrise</string>
     <string name="sunset">Sunset</string>
     <string name="temperature_range">Temperature range</string>
+    <string name="navigate_back">Navigate back</string>
 
     <!-- Formats -->
     <string name="temp_format">%s°C</string>
