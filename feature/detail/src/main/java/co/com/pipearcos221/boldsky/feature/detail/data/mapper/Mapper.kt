@@ -13,14 +13,7 @@ private const val SCHEME_HTTPS = "https"
 private const val URL_SCHEME_PREFIX = "//"
 
 fun WeatherDetailResponseDto.toWeatherDetail(): WeatherDetail {
-    val today = this.forecast.forecastDay.firstOrNull()
-    val hourlyForecasts = today?.hour?.map {
-        HourlyForecast(
-            time = it.time.toHour(),
-            tempC = it.tempC,
-            conditionIconUrl = it.condition.icon.toHttps()
-        )
-    } ?: emptyList()
+    val todayForecast = this.forecast.forecastDay.first()
 
     return WeatherDetail(
         locationName = this.location.name,
@@ -33,6 +26,9 @@ fun WeatherDetailResponseDto.toWeatherDetail(): WeatherDetail {
         windSpeedKph = this.current.windKph,
         humidity = this.current.humidity,
         visibilityKm = this.current.visibilityKm,
+        dewPointC = this.current.dewPointC,
+        sunrise = todayForecast.astro.sunrise,
+        sunset = todayForecast.astro.sunset,
         dailyForecasts = this.forecast.forecastDay.map {
             DailyForecast(
                 date = it.date,
@@ -41,7 +37,13 @@ fun WeatherDetailResponseDto.toWeatherDetail(): WeatherDetail {
                 conditionIconUrl = it.day.condition.icon.toHttps()
             )
         },
-        hourlyForecasts = hourlyForecasts
+        hourlyForecasts = todayForecast.hour?.map {
+            HourlyForecast(
+                time = it.time.toHour(),
+                tempC = it.tempC,
+                conditionIconUrl = it.condition.icon.toHttps()
+            )
+        } ?: emptyList()
     )
 }
 
