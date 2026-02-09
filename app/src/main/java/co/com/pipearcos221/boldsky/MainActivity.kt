@@ -10,10 +10,12 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import co.com.pipearcos221.boldsky.core.ui.theme.BoldSkyTheme
 import co.com.pipearcos221.boldsky.navigation.AppNavHost
+import dagger.hilt.android.AndroidEntryPoint
 
 /**
  * The main activity of the application.
  */
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

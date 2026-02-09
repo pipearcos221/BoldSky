@@ -48,6 +48,8 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.material3)
     implementation(libs.navigation.compose)
+    implementation(libs.lifecycle.viewmodel.compose)
+    debugImplementation(libs.androidx.compose.ui.tooling.preview)
 
     implementation(libs.retrofit)
     implementation(libs.retrofit.kotlinx.serialization)
